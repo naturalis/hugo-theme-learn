@@ -23,7 +23,28 @@
           {{ template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks}}
           {{end}}
         {{end}} 
+
+        {{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
+            {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
+            <li data-nav-id="{{.URL}}" title="{{ .Title }}" class="dd-item
+                    {{if .IsAncestor $currentNode }}parent{{end}}
+                    {{if eq .Permalink $currentNode.Permalink}}active{{end}}
+                    {{if .Params.alwaysopen}}parent{{end}}
+                    ">
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    <ul>
+                        {{ range .Data.Pages }}
+                        <li class="dd-item
+                            {{if eq .UniqueID $currentNode.UniqueID}}active{{end}}
+                            "><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                        {{ end }}
+                    </ul>
+                </li>
+            {{ end }}
+        {{ end }}
+
     </ul>
+
 
     {{ $disableShortcutsTitle := .Site.Params.DisableShortcutsTitle}}
     {{with .Site.Menus.shortcuts}}
