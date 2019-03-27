@@ -93,11 +93,11 @@
             {{ if eq .page.Kind "taxonomy" }}
                 {{ $title := title .page.Type }}
                 {{ $pageType := .page.Type }}
-                &gt; <a href="{{ .home.URL | relURL }}">{{ .home.Title }}</a> &gt; 
+                <a href="{{ .home.URL | relURL }}">{{ .home.Title }}</a> &gt; 
                 <a href="{{ $pageType | relURL }}">{{ $title }}</a> &gt; 
                 {{.value|safeHTML}}
             {{ else }}
-                &gt; <a href="{{ .home.URL | relURL }}">{{ .home.Title }}</a> &gt; 
+                <a href="{{ .home.URL | relURL }}">{{ .home.Title }}</a> &gt; 
                 {{.value|safeHTML}}
             {{ end }}
           {{end}}
