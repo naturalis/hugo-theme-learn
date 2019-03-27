@@ -12,6 +12,7 @@
   </div>
 
     <div class="highlightable">
+    <h4>Algemeen</h4>
     <ul class="topics">
 
         {{if eq .Site.Params.ordersectionsby "title"}}  
@@ -23,7 +24,9 @@
           {{ template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks}}
           {{end}}
         {{end}} 
-
+    </ul>
+    <h4>Onderdelen</h4>
+    <ul class="topics">
         {{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
             {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
             <li data-nav-id="{{.URL}}" title="{{ .Title }}" class="dd-item

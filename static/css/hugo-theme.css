@@ -1,5 +1,19 @@
 /* Insert here special css for hugo theme, on top of any other imported css */
 
+#sidebar h4 {
+    margin-top : -1rem;
+    padding-top : 1rem;
+    padding-bottom : 0.5rem;
+    padding-left : 1rem;
+    color : #fff !important;
+    text-decoration : none;
+    border-bottom : 2px #0082a7 solid;
+}
+
+ul.topics {
+    margin-bottom : 2rem !important;
+}
+
 
 /* Table of contents */
 
