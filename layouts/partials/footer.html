@@ -9,7 +9,9 @@
         <!-- Next prev page -->
         {{ $currentNode := . }}
         
+        {{ if ne .Kind "taxonomyTerm" }}
         {{ template "menu-nextprev" dict "menu" .Site.Home "currentnode" $currentNode }}
+        {{ end }}
         
         {{ define "menu-nextprev" }}
             {{$currentNode := .currentnode }}

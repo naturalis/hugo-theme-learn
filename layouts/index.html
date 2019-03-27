@@ -3,6 +3,14 @@
 <a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
 </span>
 
+{{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
+    {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
+        {{ range $page := .Data.Pages }}
+            {{ $page.Title | jsonify }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
 {{if .Site.Home.Content }} 
 {{.Site.Home.Content}}	
 {{else}}           
