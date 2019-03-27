@@ -97,7 +97,7 @@
                 <a href="{{ $pageType | relURL }}">{{ $title }}</a> &gt; 
                 {{.value|safeHTML}}
             {{ else }}
-                {{ if eq .Kind "taxonomy" }}
+                {{ if or (eq .Kind "taxonomy") (eq .page.Kind "taxonomyTerm") }}
                 <a href="{{ .home.URL | relURL }}">{{ .home.Title }}</a> &gt; 
                 {{ end }}
                 {{.value|safeHTML}}
