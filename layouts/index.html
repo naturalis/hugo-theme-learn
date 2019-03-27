@@ -3,6 +3,7 @@
 <a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
 </span>
 
+{{ $.Site.GetPage ("componenten") | jsonify }}
 {{if .Site.Home.Content }} 
 {{.Site.Home.Content}}	
 {{else}}           
