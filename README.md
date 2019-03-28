@@ -17,6 +17,19 @@ Visit the [theme documentation](https://learn.netlify.com/en/) to see what is go
 - Customizable look and feel and themes variants
 - Buttons, Tip/Note/Info/Warning boxes, Expand
 
+## Extra Features for Naturalis
+
+Taxonomies now are also automatically added to the navigation. This is done by
+[extra code in the menu partial](https://github.com/naturalis/hugo-theme-naturalis/blob/df79612d9a5496265db7469113a0a7cdacabc40f/layouts/partials/menu.html#L28).
+
+These are also added to the [json generated for search](https://github.com/naturalis/hugo-theme-naturalis/blob/df79612d9a5496265db7469113a0a7cdacabc40f/layouts/index.json#L13).
+
+The breadcrumb for taxonomies is [also generated differently](https://github.com/naturalis/hugo-theme-naturalis/blob/df79612d9a5496265db7469113a0a7cdacabc40f/layouts/partials/header.html#L93).
+
+These taxonomy pages can not use the next/prev buttons, so for taxonomy and terms they
+[are no longer displayed](https://github.com/naturalis/hugo-theme-naturalis/blob/df79612d9a5496265db7469113a0a7cdacabc40f/layouts/partials/footer.html#L12). 
+
+
 ## Installation
 
 Navigate to your themes folder in your Hugo site and use the following commands:
