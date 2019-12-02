@@ -100,11 +100,7 @@
         {{define "breadcrumb"}}
           {{$parent := .page.Parent }}
           {{ if $parent }}
-<<<<<<< HEAD
-            {{ $value := (printf "<a href='%s'>%s</a> &gt; %s" $parent.URL $parent.Title .value) }}
-=======
             {{ $value := (printf "<a href='%s'>%s</a> > %s" $parent.RelPermalink $parent.Title .value) }}
->>>>>>> upstream
             {{ template "breadcrumb" dict "page" $parent "value" $value }} 
           {{else}}
             {{ if eq .page.Kind "taxonomy" }}
