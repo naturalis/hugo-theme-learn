@@ -36,7 +36,7 @@
                     ">
                     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
                     <ul>
-                        {{ range .Data.Pages }}
+                        {{ range .Data.Pages.ByTitle }}
                         <li class="dd-item
                             {{if eq .UniqueID $currentNode.UniqueID}}active{{end}}
                             "><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
